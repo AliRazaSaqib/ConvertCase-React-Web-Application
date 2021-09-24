@@ -1,14 +1,10 @@
 /** @format */
 
 import React, { useState } from "react";
-import "../EncodeSection/encode.css";
 import Swal from "sweetalert2";
-
-export default function Encode() {
+export default function InverseCase() {
   const [text, setText] = useState("");
-  const handleSmallTextGenerator = (event) => {
-    setText(event.target.value);
-  };
+
   const triggerAlert = () => {
     Swal.fire({
       title: "Please Enter text first than click on button",
@@ -16,14 +12,19 @@ export default function Encode() {
     });
   };
 
-  const handleEncoding = () => {
+  //Show text in invserCase
+  const handleInverseCase = () => {
     let checkEmpty = document.getElementById("set_input").value;
     if (checkEmpty === "") {
       triggerAlert();
     } else {
-      const res = btoa(text);
-      document.getElementById("get_input").innerHTML = res;
+      let inverCase = text.split("").reverse().join("");
+      document.getElementById("get_input").innerHTML = inverCase;
     }
+  };
+
+  const handleOnChange = (event) => {
+    setText(event.target.value);
   };
   const handleClear = () => {
     document.getElementById("get_input").innerHTML = "";
@@ -33,7 +34,7 @@ export default function Encode() {
   return (
     <div>
       <h3>
-        Enter <small>String</small> ToEncode
+        Change <small>Text</small> IntoInverseCase
       </h3>
 
       <p>
@@ -48,12 +49,12 @@ export default function Encode() {
             className="form-control"
             rows="8"
             id="set_input"
-            placeholder="Type copy or paste your string here to encode"
-            onChange={handleSmallTextGenerator}
+            placeholder="Type copy or paste your text here to InverCase"
+            onChange={handleOnChange}
           ></textarea>
 
           <div className="encodeButtons">
-            <button onClick={handleEncoding}>Encode</button>
+            <button onClick={handleInverseCase}>Inverse</button>
             <button onClick={handleClear}>Clear</button>
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import "../EncodeSection/encode.css";
+import Swal from "sweetalert2";
 
 export default function Decode() {
   const [text, setText] = useState("");
@@ -9,9 +10,20 @@ export default function Decode() {
     setText(event.target.value);
   };
 
+  const triggerAlert = () => {
+    Swal.fire({
+      title: "Please Enter text first than click on button",
+      confirmButtonClass: "btn-dark",
+    });
+  };
   const handleEncoding = () => {
-    const res = atob(text);
-    document.getElementById("get_input").innerHTML = res;
+    let checkEmpty = document.getElementById("set_input").value;
+    if (checkEmpty === "") {
+      triggerAlert();
+    } else {
+      const res = atob(text);
+      document.getElementById("get_input").innerHTML = res;
+    }
   };
   const handleClear = () => {
     document.getElementById("get_input").innerHTML = "";
@@ -21,7 +33,7 @@ export default function Decode() {
   return (
     <div>
       <h3>
-        Enter <small>Text</small> Below
+        Enter <small>String</small> ToDecode
       </h3>
 
       <p>
@@ -36,7 +48,7 @@ export default function Decode() {
             className="form-control"
             rows="8"
             id="set_input"
-            placeholder="Type copy or paste your text here to decode"
+            placeholder="Type copy or paste your string here to decode"
             onChange={handleSmallTextGenerator}
           ></textarea>
 

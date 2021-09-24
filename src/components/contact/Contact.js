@@ -15,46 +15,32 @@ export default function Contact() {
           interdum purus at sem ornare sodales. Morbi leo nulla, pharetra vel
           felis nec, ullamcorper condimentum quam.
         </p>
-        <div className="row">
-          <div className="col-sm-12 col-md-6 col-lg-3 my-5">
+        <div className="row adjustContent">
+          <div className="col-sm-12 col-md-6 col-lg-3 my-2">
             <div className="card border-0">
               <div className="card-body text-center">
                 <i className="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
-                <h4 className="text-uppercase mb-5">call us</h4>
-                <p>+8801683615582,+8801750603409</p>
+                <h4 className="text-uppercase mb-2">call us</h4>
+                <p>+92307-7534255 | +92303-7892935</p>
               </div>
             </div>
           </div>
-          <div className="col-sm-12 col-md-6 col-lg-3 my-5">
-            <div className="card border-0">
-              <div className="card-body text-center">
-                <i
-                  className="fa fa-map-marker fa-5x mb-3"
-                  aria-hidden="true"
-                ></i>
-                <h4 className="text-uppercase mb-5">office loaction</h4>
-                <address>Suite 02, Level 12, Sahera Tropical Center </address>
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-12 col-md-6 col-lg-3 my-5">
-            <div className="card border-0">
-              <div className="card-body text-center">
-                <i
-                  className="fa fa-map-marker fa-5x mb-3"
-                  aria-hidden="true"
-                ></i>
-                <h4 className="text-uppercase mb-5">office loaction</h4>
-                <address>Suite 02, Level 12, Sahera Tropical Center </address>
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-12 col-md-6 col-lg-3 my-5">
+          <div className="col-sm-12 col-md-6 col-lg-3 my-2">
             <div className="card border-0">
               <div className="card-body text-center">
                 <i className="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
-                <h4 className="text-uppercase mb-5">email</h4>
-                <p>http://al.a.noman1416@gmail.com</p>
+                <h4 className="text-uppercase mb-2">Website</h4>
+                <a href="https://www.incomebomb.com/">incomebomb.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-sm-12 col-md-6 col-lg-3 my-2">
+            <div className="card border-0">
+              <div className="card-body text-center">
+                <i className="fa fa-envelope fa-5x mb-3" aria-hidden="true"></i>
+                <h4 className="text-uppercase mb-2">email</h4>
+                <p>raza80540@gmail.com | alics7033@gmail.com </p>
               </div>
             </div>
           </div>

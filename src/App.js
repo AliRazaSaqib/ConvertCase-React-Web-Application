@@ -10,6 +10,8 @@ import React from "react";
 import Contact from "./components/contact/Contact";
 import Encode from "./components/EncodeSection/Encode";
 import Decode from "./components/EncodeSection/Decode";
+import InverseCase from "./components/TextInverseCase/InverseCase";
+import BoldText from "./components/BoldText/BoldText";
 
 function App() {
   return (
@@ -39,6 +41,20 @@ function App() {
                   heading="Enter Text Here"
                   exact
                   component={Decode}
+                />
+
+                <Route
+                  path="/inverse"
+                  heading="Enter Text Here"
+                  exact
+                  component={InverseCase}
+                />
+
+                <Route
+                  path="/textbold"
+                  heading="Enter Text Here"
+                  exact
+                  component={BoldText}
                 />
 
                 <Route path="/about" exact component={About} />

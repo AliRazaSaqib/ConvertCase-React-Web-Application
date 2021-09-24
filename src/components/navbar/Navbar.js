@@ -3,8 +3,6 @@
 import React from "react";
 import "../navbar/navbar.css";
 import { Link } from "react-router-dom";
-// import About from "../about/About";
-// import Counter from "./components/counter/Counter";
 
 export default function navbar() {
   return (
@@ -50,17 +48,21 @@ export default function navbar() {
               </li>
             </Link>
 
-            <li className="nav-item">
-              <a className="nav-link waves-effect waves-light" href="\">
-                Reverse Text Generator
-              </a>
-            </li>
+            <Link to="/inverse">
+              <li className="nav-item">
+                <a className="nav-link waves-effect waves-light" href="\">
+                  Inverse Case
+                </a>
+              </li>
+            </Link>
 
-            <li className="nav-item">
-              <a className="nav-link waves-effect waves-light" href="\">
-                Bold Text Generator
-              </a>
-            </li>
+            <Link to="/textbold">
+              <li className="nav-item">
+                <a className="nav-link waves-effect waves-light" href="\">
+                  Bold Text Generator
+                </a>
+              </li>
+            </Link>
           </ul>
 
           <ul className="scoial-icons">

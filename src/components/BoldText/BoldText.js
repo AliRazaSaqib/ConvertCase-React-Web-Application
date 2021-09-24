@@ -1,14 +1,12 @@
 /** @format */
 
 import React, { useState } from "react";
-import "../EncodeSection/encode.css";
 import Swal from "sweetalert2";
+import "../BoldText/boldText.css";
 
-export default function Encode() {
+export default function BoldText() {
   const [text, setText] = useState("");
-  const handleSmallTextGenerator = (event) => {
-    setText(event.target.value);
-  };
+
   const triggerAlert = () => {
     Swal.fire({
       title: "Please Enter text first than click on button",
@@ -16,24 +14,27 @@ export default function Encode() {
     });
   };
 
-  const handleEncoding = () => {
+  const handleOnChange = (event) => {
+    setText(event.target.value);
+  };
+
+  const handleClear = () => {
+    document.getElementById("set_input").value = "";
+    setText("");
+  };
+
+  const handleTextBold = () => {
     let checkEmpty = document.getElementById("set_input").value;
     if (checkEmpty === "") {
       triggerAlert();
     } else {
-      const res = btoa(text);
-      document.getElementById("get_input").innerHTML = res;
+      document.getElementById("set_input").style.fontWeight = "bold";
     }
-  };
-  const handleClear = () => {
-    document.getElementById("get_input").innerHTML = "";
-    document.getElementById("set_input").value = "";
-    setText("");
   };
   return (
     <div>
       <h3>
-        Enter <small>String</small> ToEncode
+        Make <small>Text</small> Bold
       </h3>
 
       <p>
@@ -43,27 +44,19 @@ export default function Encode() {
         sapiente voluptatem impedit.
       </p>
       <div className="holdsDivs">
-        <div className="enterForEncode">
+        <div className="enterForEncode textBold">
           <textarea
             className="form-control"
             rows="8"
             id="set_input"
-            placeholder="Type copy or paste your string here to encode"
-            onChange={handleSmallTextGenerator}
+            placeholder="Type copy or paste your text here to make it bold"
+            onChange={handleOnChange}
           ></textarea>
 
           <div className="encodeButtons">
-            <button onClick={handleEncoding}>Encode</button>
+            <button onClick={handleTextBold}>Bold</button>
             <button onClick={handleClear}>Clear</button>
           </div>
-        </div>
-        <div className="result">
-          <textarea
-            className="form-control"
-            id="get_input"
-            rows="8"
-            readOnly
-          ></textarea>
         </div>
       </div>
 
