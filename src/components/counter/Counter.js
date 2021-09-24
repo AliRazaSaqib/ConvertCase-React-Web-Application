@@ -93,20 +93,6 @@ export default function Counter() {
     }
   };
 
-  const countWord = () => {
-    let res = text.split(" ").length;
-    console.log(res);
-    // let wordCount = 0;
-
-    // for (let i = 0; i < text1; i++) {
-    //   if (text[i] !== " ") {
-    //     wordCount++;
-    //   }
-    // }
-    // res = wordCount;
-    // console.log(res);
-  };
-
   return (
     <div ref={ref}>
       <div

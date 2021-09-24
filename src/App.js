@@ -8,6 +8,8 @@ import Counter from "./components/counter/Counter";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React from "react";
 import Contact from "./components/contact/Contact";
+import Encode from "./components/EncodeSection/Encode";
+import Decode from "./components/EncodeSection/Decode";
 
 function App() {
   return (
@@ -16,17 +18,34 @@ function App() {
         <React.Fragment>
           <div className="main-wraper">
             <Navbar />
-            <div className="container center-section">
-              <Route
-                path="/counter"
-                heading="Enter Text Here"
-                exact
-                component={Counter}
-              />
+            <div className="forMiddleSection">
+              <div className="container center-section">
+                <Route
+                  path="/"
+                  heading="Enter Text Here"
+                  exact
+                  component={Counter}
+                />
+
+                <Route
+                  path="/encode"
+                  heading="Enter Text Here"
+                  exact
+                  component={Encode}
+                />
+
+                <Route
+                  path="/decode"
+                  heading="Enter Text Here"
+                  exact
+                  component={Decode}
+                />
+
+                <Route path="/about" exact component={About} />
+                <Route path="/contact" exact component={Contact} />
+              </div>
             </div>
 
-            <Route path="/about" exact component={About} />
-            <Route path="/contact" exact component={Contact} />
             <div className="footer-section">
               <Footer />
             </div>

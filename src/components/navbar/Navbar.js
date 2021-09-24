@@ -27,25 +27,28 @@ export default function navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav mr-auto">
-            <Link to="/counter">
+            <Link to="/">
               <li className="nav-item">
                 <a className="nav-link waves-effect waves-light" href="\">
                   Convert Case
                 </a>
               </li>
             </Link>
-            <Link to="/about">
+            <Link to="/encode">
               <li className="nav-item">
                 <a className="nav-link waves-effect waves-light" href="\">
-                  Small Text Generator
+                  Encode String
                 </a>
               </li>
             </Link>
-            <li className="nav-item">
-              <a className="nav-link waves-effect waves-light" href="\">
-                Large Text Generator
-              </a>
-            </li>
+
+            <Link to="/decode">
+              <li className="nav-item">
+                <a className="nav-link waves-effect waves-light" href="\">
+                  Decode String
+                </a>
+              </li>
+            </Link>
 
             <li className="nav-item">
               <a className="nav-link waves-effect waves-light" href="\">

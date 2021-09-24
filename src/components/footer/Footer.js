@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="container">
           <div className="footer-naivation">
             <ul>
-              <Link to="/counter">
+              <Link to="/">
                 <li>
                   <a href="\">Home</a>
                 </li>
@@ -27,7 +27,7 @@ export default function Footer() {
                 </li>
               </Link>
               <li>
-                <a href="\">Privacy</a>
+                <a href="\">Privacy and policy</a>
               </li>
               <li>
                 <a href="\">Term and condition</a>
