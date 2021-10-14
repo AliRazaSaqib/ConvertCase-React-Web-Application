@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ConvertCase-React-Web-Application/static/css/main.1da5b2ee.chunk.css",
+    "main.js": "/ConvertCase-React-Web-Application/static/js/main.6fb71834.chunk.js",
+    "main.js.map": "/ConvertCase-React-Web-Application/static/js/main.6fb71834.chunk.js.map",
+    "runtime-main.js": "/ConvertCase-React-Web-Application/static/js/runtime-main.720db06d.js",
+    "runtime-main.js.map": "/ConvertCase-React-Web-Application/static/js/runtime-main.720db06d.js.map",
+    "static/js/2.0bdbfe99.chunk.js": "/ConvertCase-React-Web-Application/static/js/2.0bdbfe99.chunk.js",
+    "static/js/2.0bdbfe99.chunk.js.map": "/ConvertCase-React-Web-Application/static/js/2.0bdbfe99.chunk.js.map",
+    "static/js/3.7fd197d9.chunk.js": "/ConvertCase-React-Web-Application/static/js/3.7fd197d9.chunk.js",
+    "static/js/3.7fd197d9.chunk.js.map": "/ConvertCase-React-Web-Application/static/js/3.7fd197d9.chunk.js.map",
+    "index.html": "/ConvertCase-React-Web-Application/index.html",
+    "static/css/main.1da5b2ee.chunk.css.map": "/ConvertCase-React-Web-Application/static/css/main.1da5b2ee.chunk.css.map",
+    "static/js/2.0bdbfe99.chunk.js.LICENSE.txt": "/ConvertCase-React-Web-Application/static/js/2.0bdbfe99.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.720db06d.js",
+    "static/js/2.0bdbfe99.chunk.js",
+    "static/css/main.1da5b2ee.chunk.css",
+    "static/js/main.6fb71834.chunk.js"
+  ]
+}
