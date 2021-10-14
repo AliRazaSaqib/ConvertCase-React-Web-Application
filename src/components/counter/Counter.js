@@ -40,44 +40,44 @@ export default function Counter() {
 
   //Convert Text to UpperCase
   const handleUpperCase = () => {
-    let checkEmpty = document.getElementById("word_counter").value;
-    let convertUpper = text.toLocaleUpperCase();
-    if (checkEmpty === "") {
+    if (text.length === 0) {
       triggerAlert();
     } else {
+      let convertUpper = text.toLocaleUpperCase();
       setText(convertUpper);
     }
   };
 
   //Convert Text to LowerCase
   const handleLowerCase = () => {
-    let checkEmpty = document.getElementById("word_counter").value;
-    let convertLower = text.toLocaleLowerCase();
-    if (checkEmpty === "") {
+    if (text.length === 0) {
       triggerAlert();
     } else {
+      let convertLower = text.toLocaleLowerCase();
       setText(convertLower);
     }
   };
 
   //handleTitleCase text
   const handleTitleCase = () => {
-    let checkEmpty = document.getElementById("word_counter").value;
-    if (checkEmpty === "") {
+    if (text.length === 0) {
       triggerAlert();
     } else {
       let titleCase = text
         .split(" ")
-        .map((str) => str[0].toUpperCase() + str.substr(1).toLowerCase())
+        .map(
+          (str) =>
+            str[0].toLocaleUpperCase() + str.substr(1).toLocaleLowerCase()
+        )
         .join(" ");
+
       setText(titleCase);
     }
   };
 
   //handleSentenceCase text
   const handleSentenceCase = () => {
-    let checkEmpty = document.getElementById("word_counter").value;
-    if (checkEmpty === "") {
+    if (text.length === 0) {
       triggerAlert();
     } else {
       let sentenceCase = text
@@ -93,8 +93,7 @@ export default function Counter() {
   //Show text in invserCase
   let clicked = false;
   const handleInverseCase = () => {
-    let checkEmpty = document.getElementById("word_counter").value;
-    if (checkEmpty === "") {
+    if (text.length === 0) {
       triggerAlert();
     } else if (clicked) {
       handleUpperCase();
@@ -113,28 +112,33 @@ export default function Counter() {
   //Copy text to clipboard
   const handleClipBoard = () => {
     let copyText = document.getElementById("word_counter");
-    let checkEmpty = document.getElementById("word_counter").value;
-    if (checkEmpty === "") {
+    copyText.select();
+    copyText.setSelectionRange(0, 2000);
+    navigator.clipboard.writeText(copyText.value);
+    if (text.length === 0) {
       clipBoardAlert();
     } else {
-      copyText.select();
-      copyText.setSelectionRange(0, 2000);
-      navigator.clipboard.writeText(copyText.value);
-      if (copyText) {
-        document.getElementById("successMessage").classList.remove("d-none");
-      }
+      document.getElementById("successMessage").classList.remove("d-none");
     }
   };
 
   //handleAlternateCase after enter text
   const handleAlternateCase = () => {
-    let checkEmpty = document.getElementById("word_counter").value;
-    if (checkEmpty === "") {
+    if (text.length === 0) {
       triggerAlert();
     } else {
       let invString = (s) =>
         s.replace(/[a-z]/gi, (c) => c[`to${(s = !s) ? "Low" : "Upp"}erCase`]());
       setText(invString(text));
+    }
+  };
+
+  const handleExtraSpaces = () => {
+    if (text.length === 0) {
+      triggerAlert();
+    } else {
+      let removeSpaces = text.split(/[ ]+/);
+      setText(removeSpaces.join(" "));
     }
   };
 
@@ -169,6 +173,7 @@ export default function Counter() {
         <button onClick={handleInverseCase}>InverCase</button>
         <button onClick={handleClearText}>ClearText</button>
         <button onClick={handleAlternateCase}>AlternateCase</button>
+        <button onClick={handleExtraSpaces}>RemoveExtraSpaces</button>
         <button onClick={handleClipBoard}>ClearToClipBoard</button>
       </div>
       <div className="mt-4 word_counter_show">
@@ -179,13 +184,24 @@ export default function Counter() {
         </p>
         <p>
           Word Count:
-          <span className="word-count">{text.split(" ").length}</span>
+          <span className="word-count">{text.split(/[^\s]+/).length - 1}</span>
           <span className="seperator">|</span>
         </p>
         <p>
           Line Count:
-          <span className="word-count">{text.split("\n").length}</span>
+          <span className="word-count">{text.split("\n").length - 1}</span>
+          <span className="seperator">|</span>
         </p>
+        <p>
+          Time Spend To Read Text:
+          <span className="word-count">
+            {0.008 * text.split(" ").length} <span>Minutes</span>
+          </span>
+        </p>
+      </div>
+      <div className="text_preview mt-4">
+        <h3>Content Preview</h3>
+        <p>{text}</p>
       </div>
     </div>
   );

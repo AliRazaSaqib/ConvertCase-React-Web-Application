@@ -63,6 +63,51 @@ export default function navbar() {
                 </a>
               </li>
             </Link>
+
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="moreTools"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                More Tools
+              </a>
+              <div className="dropdown-menu" aria-labelledby="moreTools">
+                <a className="dropdown-item" href="\">
+                  <Link to="/textToImage">Convert Text To Image</Link>
+                </a>
+                <a className="dropdown-item" href="\">
+                  <Link to="/Italictext">Italic Text Convert</Link>
+                </a>
+                <a className="dropdown-item" href="\">
+                  <Link to="\"> Wide Text Generator</Link>
+                </a>
+                <a className="dropdown-item" href="\">
+                  <Link to="\"> Binary Code Translator</Link>
+                </a>
+                <a className="dropdown-item" href="\">
+                  <Link to="\">Underline Text Generator</Link>
+                </a>
+                <a className="dropdown-item" href="\">
+                  <Link to="\"> Miror Text Generator</Link>
+                </a>
+                <a className="dropdown-item" href="\">
+                  <Link to="\">Bubble Text Generator</Link>
+                </a>
+                <a className="dropdown-item" href="\">
+                  <Link to="\"> Online Notepad </Link>
+                </a>
+                <a className="dropdown-item" href="\">
+                  <Link to="\"> Glitch Text Generator</Link>
+                </a>
+                <a className="dropdown-item" href="\">
+                  <Link to="\"> Online Text tools </Link>
+                </a>
+              </div>
+            </li>
           </ul>
 
           <ul className="scoial-icons">

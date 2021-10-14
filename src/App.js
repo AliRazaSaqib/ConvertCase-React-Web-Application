@@ -1,6 +1,7 @@
 /** @format */
 import "./App.css";
 // import Counter from "./components/counter/Counter";
+
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import About from "./components/about/About";
@@ -12,6 +13,8 @@ import Encode from "./components/EncodeSection/Encode";
 import Decode from "./components/EncodeSection/Decode";
 import InverseCase from "./components/TextInverseCase/InverseCase";
 import BoldText from "./components/BoldText/BoldText";
+import ItalicText from "./components/moreTools/ItalicText";
+import ConvertTextToImage from "./components/moreTools/ConvertTextToImage";
 
 function App() {
   return (
@@ -55,6 +58,20 @@ function App() {
                   heading="Enter Text Here"
                   exact
                   component={BoldText}
+                />
+
+                <Route
+                  path="/Italictext"
+                  heading="Enter Text Here"
+                  exact
+                  component={ItalicText}
+                />
+
+                <Route
+                  path="/textToImage"
+                  heading="Enter Text Here"
+                  exact
+                  component={ConvertTextToImage}
                 />
 
                 <Route path="/about" exact component={About} />
